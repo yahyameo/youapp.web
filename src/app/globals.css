@@ -1,0 +1,135 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 25,54,59,255;
+    --background-end-rgb: 25,54,59,255;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+.badge{
+  padding: 6px;
+  border-radius: 20px;
+  background: gainsboro;
+}
+.w-fit{
+  width: fit-content;
+}
+.no-border:focus {
+  outline: none; /* Remove the default focus outline */
+}
+.pull-left{
+  float: left;
+}
+.pull-right{
+  float: right;
+}
+.avatar-user{
+  width: 50px;
+  height: 50px;
+}
+/* Style for the unordered list */
+.users-list {
+  list-style: none; /* Remove default bullets */
+  padding: 0;
+  margin: 0;
+}
+
+/* Style for list items */
+.users-list li {
+  height: 60px;
+  padding: 10px 0;
+  border-bottom: 1px solid #ccc; /* Add a border as a divider */
+}
+
+/* Style for last list item to remove bottom border */
+.users-list li:last-child {
+  border-bottom: none;
+}
+
+
+.chat{
+  display:flex;
+  flex-direction:column;
+  background: #f0f0f0;
+  width: 400px;
+}
+
+.chat_bubble_container{
+  display:flex;
+  width: 400px;
+}
+
+.chat_bubble_container.incoming{
+  justify-content: flex-start;
+}
+
+.chat_bubble_container.outgoing{
+  justify-content: flex-end;
+  padding-right: 16px;
+}
+
+.chat_bubble_container .chat_bubble{
+  padding: 4px;
+  border-radius: 5px;
+  margin: 5px;
+}
+
+.chat_bubble_container.incoming .chat_bubble{
+   background: #d1d1d1;
+}
+
+.chat_bubble_container.outgoing .chat_bubble{
+   background: #429bd7;
+  color: white;
+}
+.textarea:focus{
+  border: none;
+}
+.chat-input {
+  width: 80%;
+  border-bottom: 1px solid gray;
+  padding: 8px;
+  transition: border-color 0.3s ease; /* Add a transition for smooth effect */
+  outline: none; /* Remove default focus outline */
+}
+
+/* Remove border when input is focused */
+.chat-input:focus {
+  border-color: transparent; /* Change border color to transparent */
+}
+
+.send-btn{
+  vertical-align: top;
+  margin-top: 12px;
+  border: 1px solid;
+  border-radius: 20px;
+  padding: 8px;
+}
+.w-100{
+  width: 100%;
+}
